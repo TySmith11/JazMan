@@ -1,4 +1,4 @@
-#ifdef STACK
+#ifndef STACK
 #define STACK
 #include <vector>
 #include "Symbols.h"
@@ -9,8 +9,7 @@ public:
 	void Push(int numbers);
 
 private:
-	std::vector<int> Stack;
-	
+	std::vector<int> stack;
 };
 
 #endif
