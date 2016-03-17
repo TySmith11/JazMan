@@ -14,7 +14,7 @@ class Symbols
 private:
 
 public:
-	void Whatdo(vector<Parsing> Placeholder);
+	void Whatdo(std::vector<Parsing>placeholder);
 
 };
 #endif

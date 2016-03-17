@@ -1,4 +1,4 @@
-#inndef STACK
+#ifdef STACK
 #define STACK
 #include <vector>
 #include "Symbols.h"

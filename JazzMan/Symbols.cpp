@@ -3,6 +3,7 @@
 #include <vector>
 #include "Symbols.h"
 #include "Parsing.h"
+#include "FileReader.h"
 using namespace std;
 
 void Symbols::Whatdo(vector<Parsing>placeholder)

@@ -1,15 +1,5 @@
 #include <iostream>
 #include "Stack.h"
 
+using namespace std;
 
-
-
-void Stack::Push(int numbers)
-{
-
-}
-
-void Stack::Pop()
-{
-
-}

@@ -60,6 +60,6 @@ FileReader::FileReader(string FileName)
 	}
 	file.close();
 	
-	Symbols(placeholder);
+	Symbols().Whatdo(placeholder);
 	
 }
