@@ -42,12 +42,15 @@ void Symbols::Whatdo(vector<Parsing>placeholder)
 
 		if (placeholder[i].state == "lable")
 		{
-
+			
 		}
 
 		if (placeholder[i].state == "goto")
 		{
-
+			for (int j = 0; j < placeholder.size(); j++)
+			{
+				if (placeholder[j].state == "lable" && placeholder[j].param == placeholder[i].param) { i = j; }
+			}
 		}
 
 		if (placeholder[i].state == "gofalse")
