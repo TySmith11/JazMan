@@ -4,6 +4,7 @@
 #include <sstream>
 #include <fstream>
 #include "FileReader.h"
+#include "Symbols.h"
 
 
 using namespace std;
@@ -59,10 +60,6 @@ FileReader::FileReader(string FileName)
 	}
 	file.close();
 	
-	//test
-	for (int i = 0; i < placeholder.size(); i++)
-	{
-		cout << i << placeholder[i].param << "\n";
-		cout << placeholder[i].state << "\n";
-	}
+	Symbols(placeholder);
+	
 }

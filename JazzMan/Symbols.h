@@ -3,6 +3,8 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include "FileReader.h"
+#include "Parsing.h"
 //need to interact with stacks
 //need to interact with maths
 //need to interact with logics
@@ -12,6 +14,7 @@ class Symbols
 private:
 
 public:
+	void Whatdo(vector<Parsing> Placeholder);
 
 };
 #endif

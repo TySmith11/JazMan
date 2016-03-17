@@ -1,25 +1,17 @@
 #include <iostream>
 #include <string>
+#include <vector>
 #include "Symbols.h"
+#include "Parsing.h"
 using namespace std;
-/*
-Symbols::Symbols()
 
+void Symbols::Whatdo(vector<Parsing>placeholder)
 {
-	if // jaz code "push"
-	  // stack.push_back
-	
-	else if // jaz code "rvalue l"
-
-	else if // jaz code "lvalue l"
-	
-	else if // jaz code "pop"
-
-	else if // jaz code ":="
-	
-	else if // jaz code "copy"
-
-
-
+	for (int i = 0; i < placeholder.size(); i++)
+	{
+		if (placeholder[i].state == "show")
+		{
+			cout << placeholder[i].param << "\n";
+		}
+	}
 }
-*/
