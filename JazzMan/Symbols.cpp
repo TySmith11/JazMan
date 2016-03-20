@@ -40,10 +40,6 @@ void Symbols::Whatdo(vector<Parsing>placeholder)
 
 		}
 
-		if (placeholder[i].state == "lable")
-		{
-			
-		}
 
 		if (placeholder[i].state == "goto")
 		{

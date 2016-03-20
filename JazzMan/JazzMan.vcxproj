@@ -149,14 +149,18 @@
     <ClInclude Include="FileReader.h" />
     <ClInclude Include="Main.h" />
     <ClInclude Include="Parsing.h" />
+    <ClInclude Include="Scope.h" />
     <ClInclude Include="Stack.h" />
     <ClInclude Include="Symbols.h" />
+    <ClInclude Include="Variables.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="FileReader.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Scope.cpp" />
     <ClCompile Include="Stack.cpp" />
     <ClCompile Include="Symbols.cpp" />
+    <ClCompile Include="Variables.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
