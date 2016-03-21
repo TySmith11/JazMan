@@ -1,20 +1,24 @@
-#ifndef SYMBOLS
+#ifndef fuckyou
 #define SYMBOLS
-#include <iostream>
 #include <string>
 #include <vector>
-#include "FileReader.h"
 #include "Parsing.h"
-//need to interact with stacks
-//need to interact with maths
-//need to interact with logics
-//needs to interact with file reading thing
+#include "Scope.h"
+#include "Stack.h"
+#include "FileReader.h"
+
 class Symbols
 {
 private:
+	Stack stack;
+	Scope scoping;
+	vector<Parsing> placeholder;
+	void doLogic(int i);
 
 public:
-	void Whatdo(std::vector<Parsing>placeholder);
+	void Readit(std::string FileName);
+	int Whatdo(int position);
+	
 
 };
 #endif

@@ -5,6 +5,6 @@
 class FileReader 
 {
 public:
-	FileReader(std::string FileName);
+	FileReader(std::string FileName, std::vector<Parsing> &placeholder);
 };
 #endif

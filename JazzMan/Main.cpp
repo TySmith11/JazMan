@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "FileReader.h"
+#include "Symbols.h"
 using namespace std;
 
 
@@ -19,7 +19,7 @@ int main()
 
 		else
 		{
-			FileReader FileReader(FileName);
+			Symbols Readit(FileName);
 
 		}
 

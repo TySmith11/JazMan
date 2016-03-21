@@ -10,13 +10,13 @@
 using namespace std;
 
 
-FileReader::FileReader(string FileName)
+FileReader::FileReader(string FileName, vector<Parsing> &placeholder)
 {
 	ifstream file(FileName);
 	string line;
 	int index = 0;
 	bool ignoreline = false;
-	vector<Parsing> placeholder;
+	
 
 	if (file.good())
 	{
@@ -60,6 +60,6 @@ FileReader::FileReader(string FileName)
 	}
 	file.close();
 	
-	Symbols().Whatdo(placeholder);
+
 	
 }

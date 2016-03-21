@@ -4,11 +4,19 @@
 #include "Symbols.h"
 #include "Parsing.h"
 #include "FileReader.h"
+#include "Scope.h"
+#include "Stack.h"
+#include "FileReader.h"
 using namespace std;
 
-void Symbols::Whatdo(vector<Parsing>placeholder)
+void Symbols::Readit(string FileName)
 {
-	for (int i = 0; i < placeholder.size(); i++)
+	FileReader FileReader(FileName, this->placeholder);
+}
+
+int Symbols::Whatdo(int postion)
+{
+	for (unsigned int i = postion; i < placeholder.size(); i++)
 	{
 		if (placeholder[i].state == "show")
 		{
@@ -17,12 +25,12 @@ void Symbols::Whatdo(vector<Parsing>placeholder)
 	
 		if (placeholder[i].state == "rvalue")
 		{
-
+			this->stack.Push(this->scoping.GetValue(placeholder[i].param));
 		}
 
 		if (placeholder[i].state == "lvalue")
 		{
-
+			this->stack.Push(this->scoping.GetValue(this->placeholder[i].tail));
 		}
 
 		if (placeholder[i].state == "pop")
@@ -159,4 +167,9 @@ void Symbols::Whatdo(vector<Parsing>placeholder)
 
 		}
 	}
+}
+
+void Symbols::doLogic(int i)
+{
+
 }
