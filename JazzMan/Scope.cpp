@@ -80,7 +80,7 @@ int Scope::GetAddress(string currentVariable)
 				{
 					if (this->Passing == false && this->callReturn == false)
 					{
-						this->variables.push_back(Variables(currentVariable, 0, CurrentScope + 1));
+						this->variables.push_back(Variables(currentVariable, 0, CurrentScope));
 						return j + 1;
 					}
 					else if (this->Passing == true && this->callReturn == false)
@@ -105,7 +105,7 @@ int Scope::GetAddress(string currentVariable)
 			}
 			else if (this->Passing == true && this->callReturn == false)
 			{
-				this->variables.push_back(Variables(currentVariable, 0, CurrentScope));
+				this->variables.push_back(Variables(currentVariable, 0, CurrentScope + 1));
 				return 0;
 			}
 			else if (this->Passing == true && this->callReturn == true)

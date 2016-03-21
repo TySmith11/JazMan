@@ -74,7 +74,7 @@ int Symbols::Whatdo(int postion)
 			if (a == 0)
 			{
 				for (unsigned int j = 0; j < this->placeholder.size(); j++)
-				if (placeholder[j].state == "lable" && placeholder[j].param == placeholder[i].param) { i = j; break; }
+				if (placeholder[j].state == "label" && placeholder[j].param == placeholder[i].param) { i = j; break; }
 			}
 		}
 
@@ -87,7 +87,7 @@ int Symbols::Whatdo(int postion)
 			{
 				for (unsigned int j = 0; j < this->placeholder.size(); j++)
 				{
-					if (placeholder[j].state == "lable" && placeholder[j].param == placeholder[i].param) { i = j; break; }
+					if (placeholder[j].state == "label" && placeholder[j].param == placeholder[i].param) { i = j; break; }
 				}
 			}
 		}
