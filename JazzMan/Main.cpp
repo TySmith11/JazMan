@@ -4,30 +4,37 @@
 using namespace std;
 
 
+bool running();
 
-int main()
+bool running()
 {
 	Symbols symbol;
 	string key;
 	string FileName = "";
+
 	cout << "what file do you want to load: ";
-		getline(cin, FileName);
-		
-		if (FileName == "Exit")
-		{
-			return 0;
-		}
-
-		else
-		{
-			symbol.Readit(FileName);
-			
-		}
-
-		cout << "press a key to exit";
-		cin >> key;
+	getline(cin, FileName);
 
 
 
+	if (FileName == "Exit")
+	{
+		return false;
+	}
 
+	else
+	{
+		symbol.Readit(FileName);
+
+	}
+
+	symbol.Whatdo(0);
+
+}
+
+
+int main()
+{
+	while (running());
+	return 0;
 }

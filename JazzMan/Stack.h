@@ -1,7 +1,7 @@
 #ifndef STACK
 #define STACK
 #include <vector>
-#include "Symbols.h"
+
 
 class Stack
 {
