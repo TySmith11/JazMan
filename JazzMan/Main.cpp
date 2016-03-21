@@ -19,7 +19,7 @@ int main()
 
 		else
 		{
-			Symbols Readit(FileName);
+			Symbols::Readit(FileName);
 
 		}
 

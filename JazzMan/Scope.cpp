@@ -64,11 +64,11 @@ int Scope::GetAddress(string currentVariable)
 		{
 			for (unsigned int j = 0; j < this->variables.size(); j++)
 			{
-				if (this->Passing == false && this->callReturn == false && this->variables[j].ChangeValue(currentVariable, CurrentScope) != "false")
+				if (this->Passing == false && this->callReturn == false && this->variables[j].GetValue(currentVariable, CurrentScope) != "false")
 				{
 					return j;
 				}
-				else if (this->Passing == true && this->callReturn == false && this->variables[j].ChangeValue(currentVariable, CurrentScope) != "false")
+				else if (this->Passing == true && this->callReturn == false && this->variables[j].GetValue(currentVariable, CurrentScope) != "false")
 				{
 					return j;
 				}
@@ -106,7 +106,7 @@ int Scope::GetAddress(string currentVariable)
 			}
 			else if (this->Passing == true && this->callReturn == true)
 			{
-				this->variables.push_back(Variables(currentVariable, 0, currentScope));
+				this->variables.push_back(Variables(currentVariable, 0, CurrentScope));
 				return 0;
 			}
 		}

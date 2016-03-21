@@ -9,7 +9,7 @@
 #include "FileReader.h"
 using namespace std;
 
-void Symbols::Readit(string FileName)
+Symbols::Readit(string FileName)
 {
 	FileReader FileReader(FileName, this->placeholder);
 }
@@ -30,7 +30,7 @@ int Symbols::Whatdo(int postion)
 
 		if (placeholder[i].state == "lvalue")
 		{
-			this->stack.Push(this->scoping.GetValue(this->placeholder[i].tail));
+			this->stack.Push(this->scoping.GetValue(this->placeholder[i].param));
 		}
 
 		if (placeholder[i].state == "pop")

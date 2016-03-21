@@ -12,11 +12,11 @@ class Symbols
 private:
 	Stack stack;
 	Scope scoping;
-	vector<Parsing> placeholder;
+	std::vector<Parsing> placeholder;
 	void doLogic(int i);
 
 public:
-	void Readit(std::string FileName);
+	Readit(std::string FileName);
 	int Whatdo(int position);
 	
 
