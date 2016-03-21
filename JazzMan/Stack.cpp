@@ -23,7 +23,7 @@ void Stack::Pop()
 
 void Stack::Print()
 {
-	if (this - stack.size() > 0)
+	if (this->stack.size() > 0)
 	{
 		cout << this->stack[stack.size() - 1] << endl;
 	}

@@ -6,7 +6,7 @@ using namespace std;
 Scope::Scope()
 {
 	this->CurrentScope = 0;
-	this->callReturn = true;
+	this->callReturn = false;
 	this->Passing = false;
 
 
@@ -22,7 +22,7 @@ int Scope::GetValue(string i)
 			{
 				return stoi(this->variables[j].GetValue(i, CurrentScope));
 			}
-			else if (this->Passing == true && this->callReturn == true && this->variables[j].GetValue(i, CurrentScope) != "false")
+			else if (this->Passing == true && this->callReturn == true && this->variables[j].GetValue(i, CurrentScope + 1) != "false")
 			{
 				return stoi(this->variables[j].GetValue(i, CurrentScope + 1));
 			}
@@ -68,7 +68,11 @@ int Scope::GetAddress(string currentVariable)
 				{
 					return j;
 				}
-				else if (this->Passing == true && this->callReturn == false && this->variables[j].GetValue(currentVariable, CurrentScope) != "false")
+				else if (this->Passing == true && this->callReturn == false && this->variables[j].GetValue(currentVariable, CurrentScope + 1) != "false")
+				{
+					return j;
+				}
+				else if (this->Passing == true && this->callReturn == true && this->variables[j].GetValue(currentVariable, CurrentScope) != "false")
 				{
 					return j;
 				}
@@ -81,7 +85,7 @@ int Scope::GetAddress(string currentVariable)
 					}
 					else if (this->Passing == true && this->callReturn == false)
 					{
-						this->variables.push_back(Variables(currentVariable, 0, CurrentScope));
+						this->variables.push_back(Variables(currentVariable, 0, CurrentScope + 1));
 						return j + 1;
 					}
 					else if (this->Passing == true && this->callReturn == true)

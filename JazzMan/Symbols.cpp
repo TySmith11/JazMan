@@ -18,6 +18,10 @@ int Symbols::Whatdo(int postion)
 {
 	for (unsigned int i = postion; i < placeholder.size(); i++)
 	{
+		if (placeholder[i].state == "push")
+		{
+			this->stack.Push(stoi(this->placeholder[i].param));
+		}
 		if (placeholder[i].state == "show")
 		{
 			cout << placeholder[i].param << "\n";
@@ -30,7 +34,7 @@ int Symbols::Whatdo(int postion)
 
 		if (placeholder[i].state == "lvalue")
 		{
-			this->stack.Push(this->scoping.GetValue(this->placeholder[i].param));
+			this->stack.Push(this->scoping.GetAddress(this->placeholder[i].param));
 		}
 
 		if (placeholder[i].state == "pop")
@@ -57,7 +61,7 @@ int Symbols::Whatdo(int postion)
 		{
 			for (int j = 0; j < placeholder.size(); j++)
 			{
-				if (placeholder[j].state == "lable" && placeholder[j].param == placeholder[i].param) { i = j; break;}
+				if (placeholder[j].state == "label" && placeholder[j].param == placeholder[i].param) { i = j; break;}
 			}
 		}
 
@@ -160,6 +164,7 @@ void Symbols::doLogic(int i)
 		this->stack.Pop();
 		a = this->stack.Peek();
 		this->stack.Pop();
+
 		if (placeholder[i].state == "+")
 		{
 			this->stack.Push(a + b);
