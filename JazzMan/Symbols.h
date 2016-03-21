@@ -1,4 +1,4 @@
-#ifndef fuckyou
+#ifndef SYMBOLS
 #define SYMBOLS
 #include <string>
 #include <vector>
@@ -16,8 +16,10 @@ private:
 	void doLogic(int i);
 
 public:
-	Readit(std::string FileName);
+	void Readit(std::string FileName);
 	int Whatdo(int position);
+	
+
 	
 
 };

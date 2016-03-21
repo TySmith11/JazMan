@@ -7,6 +7,7 @@ using namespace std;
 
 int main()
 {
+	Symbols symbol;
 	string key;
 	string FileName = "";
 	cout << "what file do you want to load: ";
@@ -19,8 +20,8 @@ int main()
 
 		else
 		{
-			Symbols::Readit(FileName);
-
+			symbol.Readit(FileName);
+			
 		}
 
 		cout << "press a key to exit";

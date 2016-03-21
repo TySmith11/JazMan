@@ -9,7 +9,7 @@
 #include "FileReader.h"
 using namespace std;
 
-Symbols::Readit(string FileName)
+void Symbols::Readit(string FileName)
 {
 	FileReader FileReader(FileName, this->placeholder);
 }
@@ -167,6 +167,7 @@ int Symbols::Whatdo(int postion)
 
 		}
 	}
+	return -1;
 }
 
 void Symbols::doLogic(int i)

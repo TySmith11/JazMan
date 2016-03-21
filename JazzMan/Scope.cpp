@@ -131,10 +131,10 @@ void Scope::decrementScope()
 
 void Scope::CallReturn(bool callReturn)
 {
-	this->CallReturn = callReturn;
+	this->callReturn = callReturn;
 }
 
 void Scope::paramPassing(bool Passing)
 {
-	this->Passing == Passing;
+	this->Passing = Passing;
 }
