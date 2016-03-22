@@ -162,8 +162,11 @@ void Symbols::doLogic(int i)
 		int b;
 		b = this->stack.Peek();
 		this->stack.Pop();
-		a = this->stack.Peek();
-		this->stack.Pop();
+		if (placeholder[i].state != "!")
+		{
+			a = this->stack.Peek();
+			this->stack.Pop();
+		}
 
 		if (placeholder[i].state == "+")
 		{
@@ -221,11 +224,11 @@ void Symbols::doLogic(int i)
 		if (placeholder[i].state == "!")
 		{
 
-			if (a == 1)
+			if (b == 1)
 			
 				this->stack.Push(0);
 			
-			else if (a == 0)
+			else if (b == 0)
 			
 				this->stack.Push(1);
 			
