@@ -6,13 +6,13 @@
 class Stack
 {
 public:
-	void Pop();
-	void Push(int numbers);
-	void Print();
-	int Peek();
+	void Pop(); //remove top of stack
+	void Push(int numbers); //place on stack
+	void Print(); //cout top of stack
+	int Peek(); //view top of stack
 
 private:
-	std::vector<int> stack;
+	std::vector<int> stack; //stack is really a vector of ints
 };
 
 #endif
