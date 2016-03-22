@@ -156,7 +156,7 @@ int Symbols::Whatdo(int postion)
 
 void Symbols::doLogic(int i)
 {
-	if (this->placeholder[i].state == "+" || this->placeholder[i].state == "-" || this->placeholder[i].state == "/" || this->placeholder[i].state == "*" || this->placeholder[i].state == "<" || this->placeholder[i].state == ">" || this->placeholder[i].state == "div" || this->placeholder[i].state == "&" || this->placeholder[i].state == "|" || this->placeholder[i].state == "<>" || this->placeholder[i].state == "<=" || this->placeholder[i].state == ">=" || this->placeholder[i].state == "=") {
+	if (this->placeholder[i].state == "+" || this->placeholder[i].state == "-" || this->placeholder[i].state == "/" || this->placeholder[i].state == "*" || this->placeholder[i].state == "<" || this->placeholder[i].state == ">" || this->placeholder[i].state == "div" || this->placeholder[i].state == "&" || this->placeholder[i].state == "|" || this->placeholder[i].state == "<>" || this->placeholder[i].state == "<=" || this->placeholder[i].state == ">=" || this->placeholder[i].state == "=" || this->placeholder[i].state == "!") {
 
 		int a;
 		int b;
@@ -220,14 +220,15 @@ void Symbols::doLogic(int i)
 
 		if (placeholder[i].state == "!")
 		{
-			int a;
-			a = this->stack.Peek();
-			this->stack.Pop();
 
 			if (a == 1)
+			
 				this->stack.Push(0);
+			
 			else if (a == 0)
+			
 				this->stack.Push(1);
+			
 		}
 
 		if (placeholder[i].state == "|")
