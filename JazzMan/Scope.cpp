@@ -12,6 +12,7 @@ Scope::Scope()
 
 }
 
+//Returns the value of a variable
 int Scope::GetValue(string i)
 {
 	if (this->variables.size() != 0)
@@ -43,7 +44,7 @@ int Scope::GetValue(string i)
 	}
 }
 
-
+//Sets the value for variable
 void Scope::SetValue(int varAdress, int value)
 {
 	if (varAdress != -1)
@@ -56,6 +57,7 @@ void Scope::SetValue(int varAdress, int value)
 	}
 }
 
+//Returns the address of a variable
 int Scope::GetAddress(string currentVariable)
 {
 	if (currentVariable != "")
@@ -122,22 +124,26 @@ int Scope::GetAddress(string currentVariable)
 	}
 }
 
+//Go down scope
 void Scope::inecrmentScope() 
 {
 	this->CurrentScope++;
 }
 
+//Go up scope
 void Scope::decrementScope()
 {
 	this->CurrentScope--;
 
 }
 
+//Return to call
 void Scope::CallReturn(bool callReturn)
 {
 	this->callReturn = callReturn;
 }
 
+//Pass a parameter
 void Scope::paramPassing(bool Passing)
 {
 	this->Passing = Passing;
