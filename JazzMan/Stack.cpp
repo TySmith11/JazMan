@@ -3,11 +3,13 @@
 
 using namespace std;
 
+//Save an int to the stack
 void Stack::Push(int numbers)
 {
 	this->stack.push_back(numbers);
 }
 
+//Remove an int from the stack
 void Stack::Pop()
 {
 	if (this->stack.size() > 0) {
@@ -21,6 +23,7 @@ void Stack::Pop()
 	}
 }
 
+//cout the top of the stack
 void Stack::Print()
 {
 	if (this->stack.size() > 0)
@@ -33,6 +36,7 @@ void Stack::Print()
 	}
 }
 
+//View the top of the stack
 int Stack::Peek()
 {
 	if (this->stack.size() > 0)

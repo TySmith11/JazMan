@@ -9,7 +9,7 @@
 
 using namespace std;
 
-
+//Read a file
 FileReader::FileReader(string FileName, vector<Parsing> &placeholder)
 {
 	ifstream file(FileName);
@@ -17,21 +17,24 @@ FileReader::FileReader(string FileName, vector<Parsing> &placeholder)
 	int index = 0;
 	bool ignoreline = false;
 	
-
+	//If file opens get a line from the file
 	if (file.good())
 	{
 		while (getline(file, line))
 		{
 			line.erase(line.find_last_not_of(" \n\t\r") + 1);
 			line.erase(0, line.find_first_not_of(" \n\t\r"));
+			//Test for a comment block
 			if (line.find("/*") != string::npos)
 			{
 				ignoreline = true;
 			}
+			//Test for blank line
 			if (line == "")
 			{
 				continue;
 			}
+			//Else if not comment or blank then stream into TempCode
 			else if (ignoreline == false)
 			{
 				stringstream ss;
@@ -47,16 +50,17 @@ FileReader::FileReader(string FileName, vector<Parsing> &placeholder)
 				
 				index++;
 			}
+			//End of comment block in file
 			else if (line.find("*/") != string::npos)
 			{
 				ignoreline = false;
 			}
 		}
 	}
-
+	//Error Condition unable to read or find file
 	else
 	{
-		cout << "Cannot find file";
+		cout << "Cannot find file\n";
 	}
 	file.close();
 	
